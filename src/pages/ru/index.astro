@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BricsGame from '../../components/BricsGame.astro';
+import WeeklyNews from '../../components/WeeklyNews.astro';
+---
+
+<BaseLayout
+  title="Рынки и валюты БРИКС | Биржи, курсы валют и ведущие компании"
+  description="Актуальная информация о фондовых биржах БРИКС, курсах валют, тенденциях форекс и быстрорастущих компаниях Бразилии, России, Индии, Китая, ЮАР и новых членов БРИКС."
+  lang="ru"
+>
+  <Fragment slot="logo">BRICS Markets</Fragment>
+  <Fragment slot="footer-name">BRICS Markets & Currencies</Fragment>
+
+  <section class="bb-hero">
+    <div class="bb-hero-bg"></div>
+    <div class="bb-hero-overlay"></div>
+    <div class="bb-hero-content">
+      <h1 class="bb-title">Рынки и валюты БРИКС</h1>
+      <p class="bb-tagline">Актуальная информация о фондовых биржах БРИКС, курсах валют и ведущих компаниях</p>
+      <p class="bb-lead">Отслеживайте возможности на развивающихся рынках самых быстрорастущих экономик мира. От Бомбейской фондовой биржи до Шанхайского композитного индекса, от реала до рубля — ваш портал финансовой аналитики БРИКС.</p>
+    </div>
+  </section>
+
+  <div class="ad-slot">Рекламное место - Google AdSense</div>
+
+  <div class="card-grid">
+    <article class="card">
+      <h2>Фондовые биржи БРИКС</h2>
+      <p>Полный обзор BSE и NSE в Индии, Шанхайской и Шэньчжэньской бирж в Китае, B3 в Бразилии, MOEX в России и JSE в ЮАР. Котировки индексов, объёмы торгов и анализ капитализации.</p>
+    </article>
+    <article class="card">
+      <h2>Курсы обмена валют</h2>
+      <p>Отслеживание валютных курсов CNY, INR, BRL, RUB, ZAR, EGP и AED в реальном времени. Анализ кросс-курсов, исторические тренды и влияние политики центробанков на курсы БРИКС.</p>
+    </article>
+    <article class="card">
+      <h2>Самые быстрорастущие компании</h2>
+      <p>Откройте для себя наиболее динамично развивающиеся публичные компании стран БРИКС. Секторальный анализ технологий, энергетики, финансов и производства — лидеров роста развивающихся рынков.</p>
+    </article>
+    <article class="card">
+      <h2>Валютный индекс БРИКС</h2>
+      <p>Отслеживание предлагаемой единой валюты БРИКС и хода дедолларизации. Анализ двусторонних валютных своп-соглашений и отхода от торговли в долларах США.</p>
+    </article>
+    <article class="card">
+      <h2>Сырьё и ресурсы</h2>
+      <p>Нефть, золото, редкоземельные металлы и сельхозпродукция — как страны БРИКС доминируют на мировых сырьевых рынках. Динамика цен, анализ цепочек поставок и ресурсные инвестиционные возможности.</p>
+    </article>
+    <article class="card">
+      <h2>Инвестиционные возможности</h2>
+      <p>ETF, ADR и пути прямого инвестирования в рынки БРИКС для международных инвесторов. Регуляторные руководства, оценка рисков и портфельные стратегии для экспозиции к развивающимся рынкам.</p>
+    </article>
+  </div>
+
+  <div class="ad-slot">Рекламное место - Google AdSense</div>
+
+  <BricsGame lang="ru" />
+
+  <div class="ad-slot">Ad Space</div>
+
+  <WeeklyNews lang="ru" />
+
+  <div class="ad-slot">Ad Space</div>
+</BaseLayout>
+
+<style>
+  .bb-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: -40px -20px 0;
+    padding: 0;
+  }
+  .bb-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/bricsbrother.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bb-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,.55) 0%,
+      rgba(0,0,0,.7) 50%,
+      rgba(0,0,0,.85) 100%
+    );
+  }
+  .bb-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px 24px;
+  }
+  .bb-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,.5);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+  }
+  .bb-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.95);
+    margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.4);
+  }
+  .bb-lead {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 6px rgba(0,0,0,.3);
+  }
+  @media (max-width: 640px) {
+    .bb-title { font-size: 2.4rem; }
+    .bb-tagline { font-size: 1.1rem; }
+    .bb-lead { font-size: 1rem; }
+  }
+</style>

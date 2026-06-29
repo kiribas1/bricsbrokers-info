@@ -1,0 +1,213 @@
+---
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
+const labels: Record<string, Record<string, string>> = {
+  en: { title: 'Is Your Country in BRICS?', subtitle: 'Type a country name to find out', placeholder: 'Enter country name...', check: 'Check', member: 'Full Member', partner: 'Partner Country', invited: 'Invited', not: 'Not in BRICS', since: 'Since', status: 'Status', tryAnother: 'Try Another', founder: 'Founding Member', didYouKnow: 'Did you know?', totalMembers: 'BRICS now has 10 full members and 13 partner countries', score: 'Countries found', play: 'Play Again' },
+  es: { title: '¿Tu País Está en los BRICS?', subtitle: 'Escribe el nombre de un país para descubrirlo', placeholder: 'Nombre del país...', check: 'Verificar', member: 'Miembro Pleno', partner: 'País Socio', invited: 'Invitado', not: 'No está en BRICS', since: 'Desde', status: 'Estado', tryAnother: 'Probar Otro', founder: 'Miembro Fundador', didYouKnow: '¿Sabías?', totalMembers: 'BRICS ahora tiene 10 miembros plenos y 13 países socios', score: 'Países encontrados', play: 'Jugar de Nuevo' },
+  zh: { title: '你的国家在金砖吗？', subtitle: '输入国家名称查看', placeholder: '输入国家名称...', check: '查看', member: '正式成员', partner: '伙伴国', invited: '受邀国', not: '不在金砖', since: '加入时间', status: '状态', tryAnother: '再试一个', founder: '创始成员', didYouKnow: '你知道吗？', totalMembers: '金砖现有10个正式成员和13个伙伴国', score: '已找到国家', play: '再玩一次' },
+  ru: { title: 'Твоя страна в БРИКС?', subtitle: 'Введите название страны', placeholder: 'Название страны...', check: 'Проверить', member: 'Полный член', partner: 'Страна-партнёр', invited: 'Приглашён', not: 'Не в БРИКС', since: 'С', status: 'Статус', tryAnother: 'Попробовать другую', founder: 'Основатель', didYouKnow: 'Знаете ли вы?', totalMembers: 'В БРИКС 10 полных членов и 13 стран-партнёров', score: 'Найдено стран', play: 'Играть снова' },
+  pt: { title: 'Seu País Está no BRICS?', subtitle: 'Digite o nome de um país para descobrir', placeholder: 'Nome do país...', check: 'Verificar', member: 'Membro Pleno', partner: 'País Parceiro', invited: 'Convidado', not: 'Não está no BRICS', since: 'Desde', status: 'Status', tryAnother: 'Tentar Outro', founder: 'Membro Fundador', didYouKnow: 'Você sabia?', totalMembers: 'BRICS agora tem 10 membros plenos e 13 países parceiros', score: 'Países encontrados', play: 'Jogar Novamente' },
+  ar: { title: 'هل بلدك في بريكس؟', subtitle: 'اكتب اسم بلد لمعرفة ذلك', placeholder: 'اسم البلد...', check: 'تحقق', member: 'عضو كامل', partner: 'دولة شريكة', invited: 'مدعو', not: 'ليس في بريكس', since: 'منذ', status: 'الحالة', tryAnother: 'جرب آخر', founder: 'عضو مؤسس', didYouKnow: 'هل تعلم؟', totalMembers: 'بريكس لديها الآن 10 أعضاء كاملين و13 دولة شريكة', score: 'الدول التي تم العثور عليها', play: 'العب مرة أخرى' },
+};
+const t = labels[lang] || labels.en;
+const tJson = JSON.stringify(t);
+---
+
+<section class="bg-section" id="brics-game">
+  <div class="bg-container">
+    <h2 class="bg-title">{t.title}</h2>
+    <p class="bg-subtitle">{t.subtitle}</p>
+
+    <div class="bg-input-wrap">
+      <input type="text" id="bg-input" class="bg-input" placeholder={t.placeholder} autocomplete="off" />
+      <button class="bg-btn" id="bg-check" onclick="bgCheck()">{t.check}</button>
+    </div>
+
+    <div class="bg-suggestions" id="bg-suggestions"></div>
+
+    <div class="bg-result bg-hidden" id="bg-result">
+      <div class="bg-flag" id="bg-flag"></div>
+      <div class="bg-country-name" id="bg-country-name"></div>
+      <div class="bg-status-badge" id="bg-status-badge"></div>
+      <div class="bg-detail" id="bg-detail"></div>
+      <button class="bg-btn-another" onclick="bgReset()">{t.tryAnother}</button>
+    </div>
+
+    <div class="bg-footer">
+      <span class="bg-didyouknow">{t.didYouKnow}</span>
+      <span class="bg-fact">{t.totalMembers}</span>
+      <div class="bg-score">{t.score}: <strong id="bg-score">0</strong></div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ tJson }}>
+const t = JSON.parse(tJson);
+const countries = {
+  // Founders (2009)
+  "brazil": { flag: "🇧🇷", status: "member", since: "2009", note: "founder", names: ["brazil","brasil","brasile","бразилия","巴西","البرازيل"] },
+  "russia": { flag: "🇷🇺", status: "member", since: "2009", note: "founder", names: ["russia","rusia","rússia","россия","俄罗斯","俄国","روسيا"] },
+  "india": { flag: "🇮🇳", status: "member", since: "2009", note: "founder", names: ["india","índia","индия","印度","الهند"] },
+  "china": { flag: "🇨🇳", status: "member", since: "2009", note: "founder", names: ["china","cina","chine","китай","中国","الصين"] },
+  // 2010
+  "south africa": { flag: "🇿🇦", status: "member", since: "2010", note: "", names: ["south africa","sudáfrica","sudafrica","южная африка","南非","جنوب أفريقيا","sudafrica"] },
+  // 2024 expansion
+  "egypt": { flag: "🇪🇬", status: "member", since: "2024", note: "", names: ["egypt","egipto","egito","египет","埃及","مصر"] },
+  "ethiopia": { flag: "🇪🇹", status: "member", since: "2024", note: "", names: ["ethiopia","etiopía","etiópia","эфиопия","埃塞俄比亚","إثيوبيا"] },
+  "iran": { flag: "🇮🇷", status: "member", since: "2024", note: "", names: ["iran","irán","irã","иран","伊朗","إيران"] },
+  "uae": { flag: "🇦🇪", status: "member", since: "2024", note: "", names: ["uae","united arab emirates","emiratos árabes","emirados árabes","оаэ","阿联酋","الإمارات"] },
+  "indonesia": { flag: "🇮🇩", status: "member", since: "2025", note: "", names: ["indonesia","indonésia","индонезия","印度尼西亚","إندونيسيا"] },
+  // Partners (2025)
+  "algeria": { flag: "🇩🇿", status: "partner", since: "2025", note: "", names: ["algeria","argelia","argélia","алжир","阿尔及利亚","الجزائر"] },
+  "belarus": { flag: "🇧🇾", status: "partner", since: "2025", note: "", names: ["belarus","bielorrusia","bielorrússia","беларусь","белоруссия","白俄罗斯","بيلاروسيا"] },
+  "bolivia": { flag: "🇧🇴", status: "partner", since: "2025", note: "", names: ["bolivia","боливия","玻利维亚","بوليفيا"] },
+  "cuba": { flag: "🇨🇺", status: "partner", since: "2025", note: "", names: ["cuba","куба","古巴","كوبا"] },
+  "kazakhstan": { flag: "🇰🇿", status: "partner", since: "2025", note: "", names: ["kazakhstan","kazajistán","cazaquistão","казахстан","哈萨克斯坦","كازاخستان"] },
+  "malaysia": { flag: "🇲🇾", status: "partner", since: "2025", note: "", names: ["malaysia","malasia","malásia","малайзия","马来西亚","ماليزيا"] },
+  "nigeria": { flag: "🇳🇬", status: "partner", since: "2025", note: "", names: ["nigeria","нигерия","尼日利亚","نيجيريا"] },
+  "thailand": { flag: "🇹🇭", status: "partner", since: "2025", note: "", names: ["thailand","tailandia","tailândia","таиланд","泰国","تايلاند"] },
+  "turkey": { flag: "🇹🇷", status: "partner", since: "2025", note: "", names: ["turkey","turquía","turquia","türkiye","турция","土耳其","تركيا"] },
+  "uganda": { flag: "🇺🇬", status: "partner", since: "2025", note: "", names: ["uganda","уганда","乌干达","أوغندا"] },
+  "uzbekistan": { flag: "🇺🇿", status: "partner", since: "2025", note: "", names: ["uzbekistan","uzbekistán","uzbequistão","узбекистан","乌兹别克斯坦","أوزبكستان"] },
+  "vietnam": { flag: "🇻🇳", status: "partner", since: "2025", note: "", names: ["vietnam","вьетнам","越南","فيتنام"] },
+  "nicaragua": { flag: "🇳🇮", status: "partner", since: "2025", note: "", names: ["nicaragua","никарагуа","尼加拉瓜","نيكاراغوا"] },
+};
+
+let found = new Set();
+let allNames = [];
+Object.entries(countries).forEach(([key, c]) => {
+  c.names.forEach(n => allNames.push({ name: n, key: key }));
+});
+
+function findCountry(input) {
+  const q = input.toLowerCase().trim();
+  for (const [key, c] of Object.entries(countries)) {
+    if (c.names.some(n => n === q)) return { key, ...c };
+  }
+  for (const [key, c] of Object.entries(countries)) {
+    if (c.names.some(n => n.includes(q) || q.includes(n))) return { key, ...c };
+  }
+  return null;
+}
+
+window.bgCheck = function() {
+  const input = document.getElementById('bg-input').value;
+  if (!input.trim()) return;
+  document.getElementById('bg-suggestions').innerHTML = '';
+
+  const match = findCountry(input);
+  const result = document.getElementById('bg-result');
+  result.classList.remove('bg-hidden');
+
+  if (match) {
+    found.add(match.key);
+    document.getElementById('bg-score').textContent = found.size;
+    document.getElementById('bg-flag').textContent = match.flag;
+    document.getElementById('bg-country-name').textContent = match.key.charAt(0).toUpperCase() + match.key.slice(1);
+
+    const badge = document.getElementById('bg-status-badge');
+    if (match.status === 'member') {
+      badge.textContent = (match.note === 'founder' ? '⭐ ' + t.founder : '✅ ' + t.member);
+      badge.className = 'bg-status-badge bg-badge-member';
+    } else {
+      badge.textContent = '🤝 ' + t.partner;
+      badge.className = 'bg-status-badge bg-badge-partner';
+    }
+    document.getElementById('bg-detail').textContent = t.since + ': ' + match.since;
+  } else {
+    document.getElementById('bg-flag').textContent = '🌍';
+    document.getElementById('bg-country-name').textContent = input;
+    document.getElementById('bg-status-badge').textContent = '❌ ' + t.not;
+    document.getElementById('bg-status-badge').className = 'bg-status-badge bg-badge-not';
+    document.getElementById('bg-detail').textContent = '';
+  }
+};
+
+window.bgReset = function() {
+  document.getElementById('bg-input').value = '';
+  document.getElementById('bg-result').classList.add('bg-hidden');
+  document.getElementById('bg-input').focus();
+};
+
+// Autocomplete suggestions
+document.getElementById('bg-input').addEventListener('input', function(e) {
+  const q = e.target.value.toLowerCase().trim();
+  const box = document.getElementById('bg-suggestions');
+  if (q.length < 2) { box.innerHTML = ''; return; }
+  const matches = allNames.filter(a => a.name.startsWith(q)).slice(0, 5);
+  box.innerHTML = matches.map(m =>
+    '<div class="bg-sug" onclick="document.getElementById(\'bg-input\').value=\'' + m.name + '\';bgCheck()">' +
+    countries[m.key].flag + ' ' + m.name + '</div>'
+  ).join('');
+});
+
+document.getElementById('bg-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') bgCheck();
+});
+</script>
+
+<style>
+  .bg-section {
+    padding: 50px 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,200,50,.03));
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    font-family: -apple-system, sans-serif;
+  }
+  .bg-container { max-width: 600px; margin: 0 auto; padding: 0 20px; text-align: center; }
+  .bg-title {
+    font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 8px;
+    background: linear-gradient(135deg, #f59e0b, #ef4444, #3b82f6);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .bg-subtitle { color: rgba(255,255,255,.5); margin-bottom: 24px; font-size: .95rem; }
+  .bg-input-wrap { display: flex; gap: 10px; margin-bottom: 8px; }
+  .bg-input {
+    flex: 1; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.06); color: #fff; font-size: 1rem; outline: none;
+    transition: border-color .2s;
+  }
+  .bg-input:focus { border-color: rgba(245,158,11,.4); }
+  .bg-input::placeholder { color: rgba(255,255,255,.3); }
+  .bg-btn {
+    padding: 14px 24px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff;
+    font-weight: 700; font-size: 1rem; cursor: pointer; transition: all .2s;
+  }
+  .bg-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.3); }
+  .bg-suggestions { text-align: left; }
+  .bg-sug {
+    padding: 10px 16px; cursor: pointer; color: rgba(255,255,255,.7);
+    border-bottom: 1px solid rgba(255,255,255,.06); font-size: .9rem;
+  }
+  .bg-sug:hover { background: rgba(255,255,255,.06); color: #fff; }
+  .bg-result {
+    margin-top: 24px; padding: 28px; background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1); border-radius: 16px;
+  }
+  .bg-hidden { display: none; }
+  .bg-flag { font-size: 4rem; margin-bottom: 12px; }
+  .bg-country-name { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 12px; text-transform: capitalize; }
+  .bg-status-badge {
+    display: inline-block; padding: 8px 20px; border-radius: 999px;
+    font-weight: 700; font-size: .9rem; margin-bottom: 12px;
+  }
+  .bg-badge-member { background: rgba(34,197,94,.15); color: #4ade80; border: 1px solid rgba(34,197,94,.3); }
+  .bg-badge-partner { background: rgba(59,130,246,.15); color: #60a5fa; border: 1px solid rgba(59,130,246,.3); }
+  .bg-badge-not { background: rgba(239,68,68,.15); color: #f87171; border: 1px solid rgba(239,68,68,.3); }
+  .bg-detail { color: rgba(255,255,255,.5); font-size: .9rem; margin-bottom: 16px; }
+  .bg-btn-another {
+    padding: 10px 24px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2);
+    background: transparent; color: rgba(255,255,255,.7); cursor: pointer;
+    font-weight: 600; transition: all .2s;
+  }
+  .bg-btn-another:hover { border-color: rgba(255,255,255,.4); color: #fff; }
+  .bg-footer { margin-top: 28px; }
+  .bg-didyouknow { display: block; font-size: .8rem; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+  .bg-fact { display: block; color: rgba(255,255,255,.55); font-size: .9rem; margin-bottom: 12px; }
+  .bg-score { color: rgba(255,255,255,.4); font-size: .85rem; }
+  .bg-score strong { color: #f59e0b; }
+</style>

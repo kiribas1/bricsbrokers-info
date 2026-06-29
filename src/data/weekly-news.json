@@ -1,0 +1,78 @@
+{
+  "week": "2026-W27",
+  "generated": "2026-06-29",
+  "items": {
+    "en": [
+      { "title": "Shanghai Composite Surges 3.2% on Tech Rally", "summary": "Chinese tech stocks lead the SSE Composite Index to its best weekly gain in three months, driven by AI chip makers and EV manufacturers." },
+      { "title": "Indian Rupee Strengthens to 82.4 Against USD", "summary": "INR hits a six-month high as foreign institutional investors pour $4.8 billion into Indian equities during June, boosting BSE Sensex past 85,000." },
+      { "title": "Brazil's B3 Lists Record 14 IPOs in Q2 2026", "summary": "Sao Paulo exchange sees strongest quarter for new listings since 2021, led by fintech and agribusiness companies raising $6.1 billion combined." },
+      { "title": "Russian Ruble Stabilizes at 88 per USD After MOEX Reforms", "summary": "Moscow Exchange introduces new market-making rules and extended trading hours, reducing volatility and attracting regional investors." },
+      { "title": "South Africa's JSE All Share Index Hits All-Time High", "summary": "Mining giants and banking stocks push the Johannesburg exchange to record levels as gold prices sustain above $2,800 per ounce." },
+      { "title": "BRICS Currency Basket Gains 8% Against Dollar in H1 2026", "summary": "The weighted basket of BRICS currencies outperforms major developed-market currencies as de-dollarization trade flows accelerate." },
+      { "title": "Reliance Industries Overtakes Samsung in Market Cap", "summary": "India's largest conglomerate reaches $320 billion valuation, becoming Asia's most valuable non-Chinese company after strong refining margins." },
+      { "title": "Egyptian Pound Rallies After Central Bank Holds Rates at 25%", "summary": "EGP strengthens for the fourth consecutive week as inflation drops below 20%, drawing carry-trade interest from emerging market funds." },
+      { "title": "Chinese Yuan Included in 5 New Bilateral Trade Agreements", "summary": "BRICS partner nations Kazakhstan, Malaysia, and Nigeria sign yuan-denominated trade deals, pushing CNY share of global trade settlements to 6.8%." },
+      { "title": "BRICS ETF Inflows Hit $12 Billion in June", "summary": "International investors increase emerging market allocations as BRICS-focused exchange-traded funds record their highest monthly inflows since inception." }
+    ],
+    "es": [
+      { "title": "El Índice Compuesto de Shanghái sube 3,2% por rally tecnológico", "summary": "Las acciones tecnológicas chinas lideran el SSE a su mejor ganancia semanal en tres meses, impulsadas por fabricantes de chips IA y vehículos eléctricos." },
+      { "title": "La rupia india se fortalece a 82,4 frente al USD", "summary": "El INR alcanza un máximo de seis meses mientras inversores institucionales extranjeros invierten $4.800 millones en acciones indias, impulsando el BSE Sensex más allá de 85.000." },
+      { "title": "La B3 de Brasil registra récord de 14 OPI en el T2 2026", "summary": "La bolsa de São Paulo vive su trimestre más fuerte en nuevas cotizaciones desde 2021, liderado por empresas fintech y agroindustriales." },
+      { "title": "El rublo ruso se estabiliza en 88 por USD tras reformas de MOEX", "summary": "La Bolsa de Moscú introduce nuevas reglas de creación de mercado y horarios extendidos, reduciendo la volatilidad." },
+      { "title": "El índice JSE All Share de Sudáfrica alcanza máximo histórico", "summary": "Gigantes mineros y acciones bancarias llevan la bolsa de Johannesburgo a niveles récord con el oro sostenido sobre $2.800 la onza." },
+      { "title": "La cesta de divisas BRICS gana 8% frente al dólar en el S1 2026", "summary": "La cesta ponderada de monedas BRICS supera a las principales divisas de mercados desarrollados mientras se acelera la desdolarización." },
+      { "title": "Reliance Industries supera a Samsung en capitalización de mercado", "summary": "El mayor conglomerado de India alcanza una valoración de $320.000 millones, convirtiéndose en la empresa no china más valiosa de Asia." },
+      { "title": "La libra egipcia se recupera tras mantener tasas en 25%", "summary": "El EGP se fortalece por cuarta semana consecutiva mientras la inflación cae por debajo del 20%." },
+      { "title": "El yuan chino incluido en 5 nuevos acuerdos comerciales bilaterales", "summary": "Kazajistán, Malasia y Nigeria firman acuerdos comerciales denominados en yuanes, elevando la participación del CNY al 6,8% en liquidaciones globales." },
+      { "title": "Los flujos a ETFs BRICS alcanzan $12.000 millones en junio", "summary": "Inversores internacionales aumentan asignaciones a mercados emergentes con flujos récord hacia fondos cotizados enfocados en BRICS." }
+    ],
+    "zh": [
+      { "title": "上证综指在科技股带动下大涨3.2%", "summary": "中国科技股引领上证综指创下三个月来最佳周涨幅，AI芯片制造商和电动汽车企业表现强劲。" },
+      { "title": "印度卢比兑美元升至82.4", "summary": "外国机构投资者6月向印度股市注入48亿美元，推动BSE Sensex指数突破85000点，卢比创六个月新高。" },
+      { "title": "巴西B3交易所二季度创纪录完成14宗IPO", "summary": "圣保罗交易所迎来2021年以来最强新上市季度，金融科技和农业企业合计融资61亿美元。" },
+      { "title": "俄罗斯卢布在MOEX改革后企稳于88兑1美元", "summary": "莫斯科交易所推出新的做市规则和延长交易时间，降低波动性并吸引区域投资者。" },
+      { "title": "南非JSE综合指数创历史新高", "summary": "矿业巨头和银行股推动约翰内斯堡交易所达到创纪录水平，金价维持在每盎司2800美元以上。" },
+      { "title": "金砖货币篮子上半年兑美元升值8%", "summary": "随着去美元化贸易流加速，金砖国家加权货币篮子表现优于主要发达市场货币。" },
+      { "title": "信实工业市值超越三星", "summary": "印度最大企业集团估值达3200亿美元，凭借强劲的炼油利润成为亚洲最有价值的非中国企业。" },
+      { "title": "埃及镑在央行维持25%利率后反弹", "summary": "随着通胀降至20%以下，埃及镑连续第四周走强，吸引新兴市场基金的套利交易兴趣。" },
+      { "title": "人民币纳入5项新双边贸易协议", "summary": "金砖伙伴国哈萨克斯坦、马来西亚和尼日利亚签署人民币计价贸易协议，CNY在全球贸易结算中占比升至6.8%。" },
+      { "title": "6月金砖ETF资金流入达120亿美元", "summary": "国际投资者增加新兴市场配置，金砖主题交易所交易基金录得成立以来最高月度资金流入。" }
+    ],
+    "ru": [
+      { "title": "Шанхайский композитный индекс вырос на 3,2% на фоне ралли технологий", "summary": "Китайские технологические акции вывели SSE к лучшему недельному росту за три месяца благодаря производителям ИИ-чипов и электромобилей." },
+      { "title": "Индийская рупия укрепилась до 82,4 за доллар", "summary": "INR достиг шестимесячного максимума на фоне притока $4,8 млрд иностранных инвестиций в индийские акции, BSE Sensex преодолел 85 000." },
+      { "title": "B3 в Бразилии провела рекордные 14 IPO во II квартале 2026", "summary": "Биржа Сан-Паулу показала сильнейший квартал по новым листингам с 2021 года — лидируют финтех и агробизнес компании." },
+      { "title": "Рубль стабилизировался на 88 за доллар после реформ MOEX", "summary": "Московская биржа ввела новые правила маркетмейкинга и расширила часы торгов, снизив волатильность." },
+      { "title": "Индекс JSE All Share ЮАР достиг исторического максимума", "summary": "Горнодобывающие гиганты и банковские акции подняли Йоханнесбургскую биржу до рекордных уровней при золоте выше $2 800 за унцию." },
+      { "title": "Корзина валют БРИКС выросла на 8% к доллару в первом полугодии", "summary": "Взвешенная корзина валют БРИКС опережает основные валюты развитых рынков на фоне ускорения дедолларизации." },
+      { "title": "Reliance Industries обогнала Samsung по рыночной капитализации", "summary": "Крупнейший конгломерат Индии достиг оценки $320 млрд, став самой дорогой некитайской компанией Азии." },
+      { "title": "Египетский фунт укрепляется после сохранения ставки на 25%", "summary": "EGP растёт четвёртую неделю подряд на фоне снижения инфляции ниже 20%, привлекая керри-трейд фонды." },
+      { "title": "Юань включён в 5 новых двусторонних торговых соглашений", "summary": "Казахстан, Малайзия и Нигерия подписали торговые соглашения в юанях, доля CNY в мировых расчётах выросла до 6,8%." },
+      { "title": "Приток в ETF БРИКС достиг $12 млрд в июне", "summary": "Международные инвесторы наращивают вложения в развивающиеся рынки — ETF на БРИКС зафиксировали рекордный месячный приток." }
+    ],
+    "pt": [
+      { "title": "Índice Composto de Xangai sobe 3,2% em rally de tecnologia", "summary": "Ações de tecnologia chinesas lideram o SSE ao melhor ganho semanal em três meses, impulsionadas por fabricantes de chips de IA e veículos elétricos." },
+      { "title": "Rupia indiana se fortalece para 82,4 contra o USD", "summary": "INR atinge máxima de seis meses com investidores institucionais estrangeiros aportando US$ 4,8 bilhões em ações indianas, levando o BSE Sensex acima de 85.000." },
+      { "title": "B3 do Brasil registra recorde de 14 IPOs no T2 2026", "summary": "A bolsa de São Paulo vive seu trimestre mais forte em novas listagens desde 2021, liderado por fintechs e empresas do agronegócio." },
+      { "title": "Rublo russo se estabiliza em 88 por USD após reformas da MOEX", "summary": "A Bolsa de Moscou introduz novas regras de formação de mercado e horários estendidos, reduzindo a volatilidade." },
+      { "title": "Índice JSE All Share da África do Sul atinge máxima histórica", "summary": "Gigantes da mineração e ações bancárias impulsionam a bolsa de Joanesburgo a níveis recordes com o ouro acima de US$ 2.800 a onça." },
+      { "title": "Cesta de moedas BRICS valoriza 8% contra o dólar no S1 2026", "summary": "A cesta ponderada de moedas BRICS supera as principais moedas de mercados desenvolvidos com a aceleração da desdolarização." },
+      { "title": "Reliance Industries ultrapassa Samsung em valor de mercado", "summary": "O maior conglomerado da Índia atinge avaliação de US$ 320 bilhões, tornando-se a empresa não chinesa mais valiosa da Ásia." },
+      { "title": "Libra egípcia se recupera após banco central manter taxa em 25%", "summary": "EGP se fortalece pela quarta semana consecutiva com inflação caindo abaixo de 20%, atraindo interesse de carry trade." },
+      { "title": "Yuan chinês incluído em 5 novos acordos comerciais bilaterais", "summary": "Cazaquistão, Malásia e Nigéria assinam acordos comerciais denominados em yuan, elevando a participação do CNY para 6,8% nas liquidações globais." },
+      { "title": "Fluxos para ETFs BRICS atingem US$ 12 bilhões em junho", "summary": "Investidores internacionais aumentam alocações em mercados emergentes com fluxos recordes para fundos focados em BRICS." }
+    ],
+    "ar": [
+      { "title": "مؤشر شنغهاي المركب يقفز 3.2% بقيادة أسهم التكنولوجيا", "summary": "الأسهم التقنية الصينية تقود مؤشر SSE لأفضل مكاسب أسبوعية في ثلاثة أشهر بفضل صانعي رقائق الذكاء الاصطناعي والسيارات الكهربائية." },
+      { "title": "الروبية الهندية تتعزز إلى 82.4 مقابل الدولار", "summary": "الروبية تسجل أعلى مستوى في ستة أشهر مع ضخ المستثمرين المؤسسيين الأجانب 4.8 مليار دولار في الأسهم الهندية ودفع BSE Sensex فوق 85,000." },
+      { "title": "بورصة B3 البرازيلية تسجل رقماً قياسياً بـ14 اكتتاباً في الربع الثاني", "summary": "بورصة ساو باولو تشهد أقوى ربع للإدراجات الجديدة منذ 2021 بقيادة شركات التكنولوجيا المالية والأعمال الزراعية." },
+      { "title": "الروبل الروسي يستقر عند 88 مقابل الدولار بعد إصلاحات MOEX", "summary": "بورصة موسكو تطبق قواعد جديدة لصناعة السوق وساعات تداول ممتدة مما يقلل التقلبات." },
+      { "title": "مؤشر JSE All Share في جنوب أفريقيا يسجل أعلى مستوى تاريخي", "summary": "عمالقة التعدين والأسهم المصرفية تدفع بورصة جوهانسبرغ لمستويات قياسية مع استقرار الذهب فوق 2,800 دولار للأونصة." },
+      { "title": "سلة عملات بريكس ترتفع 8% مقابل الدولار في النصف الأول 2026", "summary": "السلة المرجحة لعملات بريكس تتفوق على العملات الرئيسية للأسواق المتقدمة مع تسارع التخلي عن الدولار." },
+      { "title": "Reliance Industries تتفوق على سامسونج في القيمة السوقية", "summary": "أكبر تكتل هندي يصل لتقييم 320 مليار دولار ليصبح أغلى شركة غير صينية في آسيا." },
+      { "title": "الجنيه المصري يتعافى بعد تثبيت البنك المركزي الفائدة عند 25%", "summary": "الجنيه يتعزز للأسبوع الرابع على التوالي مع انخفاض التضخم دون 20% مما يجذب صفقات الكاري تريد." },
+      { "title": "اليوان الصيني يُدرج في 5 اتفاقيات تجارية ثنائية جديدة", "summary": "كازاخستان وماليزيا ونيجيريا توقع اتفاقيات تجارية باليوان مما يرفع حصة العملة الصينية إلى 6.8% في التسويات العالمية." },
+      { "title": "تدفقات صناديق بريكس المتداولة تصل 12 مليار دولار في يونيو", "summary": "المستثمرون الدوليون يزيدون مخصصاتهم للأسواق الناشئة مع تسجيل صناديق بريكس أعلى تدفقات شهرية منذ إنشائها." }
+    ]
+  }
+}

@@ -1,0 +1,238 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const { title, description, lang, canonicalUrl, ogImage } = Astro.props;
+const currentPath = Astro.url.pathname;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+const canonical = canonicalUrl || `${siteUrl}${currentPath}`;
+const dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+const locales = ['en', 'es', 'zh', 'ru', 'pt', 'ar'];
+const langNames: Record<string, string> = {
+  en: 'English',
+  es: 'Español',
+  zh: '中文',
+  ru: 'Русский',
+  pt: 'Português',
+  ar: 'العربية',
+};
+---
+
+<!doctype html>
+<html lang={lang} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Hreflang -->
+    {locales.map((loc) => {
+      const path = currentPath.replace(`/${lang}/`, `/${loc}/`);
+      return <link rel="alternate" hreflang={loc} href={`${siteUrl}${path}`} />;
+    })}
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en/`} />
+
+    <!-- Google AdSense - replace ca-pub-XXXXXXX with your real ID -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2701690512336282"
+      crossorigin="anonymous"
+    ></script>
+
+    <style is:global>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: #d0d0d0;
+        background: #0b0d14;
+      }
+      a {
+        color: #6ba3d6;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        background: rgba(11,13,20,.92);
+        backdrop-filter: blur(12px);
+        color: white;
+        padding: 16px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(255,255,255,.06);
+      }
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .logo {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: white;
+      }
+      .logo:hover {
+        text-decoration: none;
+      }
+      nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: #ccc;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+      nav a:hover,
+      nav a.active {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+      }
+      main {
+        min-height: 70vh;
+        padding: 40px 0;
+      }
+      footer {
+        background: #070810;
+        color: #666;
+        padding: 24px 0;
+        text-align: center;
+        font-size: 0.85rem;
+        border-top: 1px solid rgba(255,255,255,.06);
+      }
+      .ad-slot {
+        background: rgba(255,255,255,.02);
+        border: 1px dashed rgba(255,255,255,.08);
+        padding: 20px;
+        text-align: center;
+        margin: 24px 0;
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255,255,255,.2);
+        font-size: 0.8rem;
+      }
+      .hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: white;
+        border-radius: 12px;
+        margin-bottom: 40px;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+        margin-bottom: 16px;
+      }
+      .hero p {
+        font-size: 1.15rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 32px 0;
+      }
+      .card {
+        background: rgba(255,255,255,.04);
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(0,0,0,.3);
+        transition: all 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255,255,255,.15);
+        box-shadow: 0 8px 30px rgba(0,0,0,.4);
+      }
+      .card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        color: #fff;
+      }
+      .card p {
+        color: rgba(255,255,255,.55);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 640px) {
+        .hero h1 {
+          font-size: 1.6rem;
+        }
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a class="logo" href={`/${lang}/`}><slot name="logo">Site</slot></a>
+        <nav>
+          {locales.map((loc) => {
+            const path = currentPath.replace(`/${lang}/`, `/${loc}/`);
+            return (
+              <a href={path} class={loc === lang ? 'active' : ''}>
+                {langNames[loc]}
+              </a>
+            );
+          })}
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} <slot name="footer-name">Site</slot>. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

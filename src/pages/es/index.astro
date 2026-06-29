@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BricsGame from '../../components/BricsGame.astro';
+import WeeklyNews from '../../components/WeeklyNews.astro';
+---
+
+<BaseLayout
+  title="Mercados y Divisas BRICS | Bolsas, Tipos de Cambio y Empresas Líderes"
+  description="Información en tiempo real sobre las bolsas de valores BRICS, tipos de cambio de divisas, tendencias forex y empresas de mayor crecimiento en Brasil, Rusia, India, China, Sudáfrica y nuevos miembros BRICS."
+  lang="es"
+>
+  <Fragment slot="logo">BRICS Markets</Fragment>
+  <Fragment slot="footer-name">BRICS Markets & Currencies</Fragment>
+
+  <section class="bb-hero">
+    <div class="bb-hero-bg"></div>
+    <div class="bb-hero-overlay"></div>
+    <div class="bb-hero-content">
+      <h1 class="bb-title">Mercados y Divisas BRICS</h1>
+      <p class="bb-tagline">Información en tiempo real sobre bolsas de valores BRICS, tipos de cambio y empresas líderes</p>
+      <p class="bb-lead">Siga las oportunidades en los mercados emergentes de las economías de más rápido crecimiento del mundo. Desde la Bolsa de Bombay hasta el Índice Compuesto de Shanghái — su puerta de entrada a la inteligencia financiera BRICS.</p>
+    </div>
+  </section>
+
+  <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
+
+  <div class="card-grid">
+    <article class="card">
+      <h2>Bolsas de Valores BRICS</h2>
+      <p>Cobertura integral de BSE y NSE en India, bolsas de Shanghái y Shenzhen en China, B3 en Brasil, MOEX en Rusia y la JSE en Sudáfrica. Índices en vivo, volúmenes de negociación y análisis de capitalización.</p>
+    </article>
+    <article class="card">
+      <h2>Tipos de Cambio de Divisas</h2>
+      <p>Seguimiento forex en tiempo real para CNY, INR, BRL, RUB, ZAR, EGP y AED. Análisis de pares cruzados, tendencias históricas e impacto de políticas de bancos centrales en los tipos de cambio BRICS.</p>
+    </article>
+    <article class="card">
+      <h2>Empresas de Mayor Crecimiento</h2>
+      <p>Descubra las empresas públicas de más rápido crecimiento en los países BRICS. Análisis sector por sector cubriendo tecnología, energía, finanzas y manufactura que impulsan el crecimiento emergente.</p>
+    </article>
+    <article class="card">
+      <h2>Índice de Divisas BRICS</h2>
+      <p>Seguimiento de la propuesta de moneda común BRICS y el progreso de desdolarización. Análisis de acuerdos de intercambio de divisas bilaterales y el alejamiento del comercio denominado en USD.</p>
+    </article>
+    <article class="card">
+      <h2>Commodities y Recursos</h2>
+      <p>Petróleo, oro, tierras raras y agricultura — cómo las naciones BRICS dominan los mercados globales de commodities. Seguimiento de precios, análisis de cadenas de suministro y oportunidades de inversión.</p>
+    </article>
+    <article class="card">
+      <h2>Oportunidades de Inversión</h2>
+      <p>ETFs, ADRs y rutas de inversión directa en mercados BRICS para inversores internacionales. Guías regulatorias, evaluación de riesgos y estrategias de portafolio para exposición a mercados emergentes.</p>
+    </article>
+  </div>
+
+  <div class="ad-slot">Espacio Publicitario - Google AdSense</div>
+
+  <BricsGame lang="es" />
+
+  <div class="ad-slot">Ad Space</div>
+
+  <WeeklyNews lang="es" />
+
+  <div class="ad-slot">Ad Space</div>
+</BaseLayout>
+
+<style>
+  .bb-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: -40px -20px 0;
+    padding: 0;
+  }
+  .bb-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/bricsbrother.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bb-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,.55) 0%,
+      rgba(0,0,0,.7) 50%,
+      rgba(0,0,0,.85) 100%
+    );
+  }
+  .bb-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px 24px;
+  }
+  .bb-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,.5);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+  }
+  .bb-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.95);
+    margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.4);
+  }
+  .bb-lead {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 6px rgba(0,0,0,.3);
+  }
+  @media (max-width: 640px) {
+    .bb-title { font-size: 2.4rem; }
+    .bb-tagline { font-size: 1.1rem; }
+    .bb-lead { font-size: 1rem; }
+  }
+</style>

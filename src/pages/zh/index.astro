@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BricsGame from '../../components/BricsGame.astro';
+import WeeklyNews from '../../components/WeeklyNews.astro';
+---
+
+<BaseLayout
+  title="金砖市场与货币 | 证券交易所、汇率与顶尖企业"
+  description="金砖国家证券交易所、外汇汇率、forex趋势及顶尖企业的实时资讯。覆盖巴西、俄罗斯、印度、中国、南非及金砖新成员国。"
+  lang="zh"
+>
+  <Fragment slot="logo">BRICS Markets</Fragment>
+  <Fragment slot="footer-name">BRICS Markets & Currencies</Fragment>
+
+  <section class="bb-hero">
+    <div class="bb-hero-bg"></div>
+    <div class="bb-hero-overlay"></div>
+    <div class="bb-hero-content">
+      <h1 class="bb-title">金砖市场与货币</h1>
+      <p class="bb-tagline">金砖国家证券交易所、外汇汇率与顶尖企业的实时资讯</p>
+      <p class="bb-lead">追踪全球增长最快经济体的新兴市场机遇。从孟买证券交易所到上证综指，从雷亚尔到卢布——您通往金砖国家金融情报的门户。</p>
+    </div>
+  </section>
+
+  <div class="ad-slot">广告位 - Google AdSense</div>
+
+  <div class="card-grid">
+    <article class="card">
+      <h2>金砖国家证券交易所</h2>
+      <p>全面覆盖印度的BSE和NSE、中国的上海和深圳交易所、巴西的B3、俄罗斯的MOEX以及南非的JSE。实时指数、交易量和市值分析。</p>
+    </article>
+    <article class="card">
+      <h2>外汇汇率</h2>
+      <p>实时追踪人民币、印度卢比、巴西雷亚尔、俄罗斯卢布、南非兰特、埃及镑和阿联酋迪拉姆的汇率。交叉货币对分析、历史趋势及央行政策对金砖汇率的影响。</p>
+    </article>
+    <article class="card">
+      <h2>增长最快的企业</h2>
+      <p>发现金砖国家增长最快的上市公司。按行业分析科技、能源、金融和制造业领域推动新兴市场增长的领军企业。</p>
+    </article>
+    <article class="card">
+      <h2>金砖货币指数</h2>
+      <p>追踪拟议中的金砖通用货币和去美元化进程。分析双边货币互换协议以及远离美元计价贸易的趋势。</p>
+    </article>
+    <article class="card">
+      <h2>大宗商品与资源</h2>
+      <p>石油、黄金、稀土和农产品——金砖国家如何主导全球大宗商品市场。价格追踪、供应链分析和资源驱动的投资机会。</p>
+    </article>
+    <article class="card">
+      <h2>投资机会</h2>
+      <p>面向国际投资者的ETF、ADR及直接投资金砖市场的途径。监管指南、风险评估及新兴市场敞口的投资组合策略。</p>
+    </article>
+  </div>
+
+  <div class="ad-slot">广告位 - Google AdSense</div>
+
+  <BricsGame lang="zh" />
+
+  <div class="ad-slot">Ad Space</div>
+
+  <WeeklyNews lang="zh" />
+
+  <div class="ad-slot">Ad Space</div>
+</BaseLayout>
+
+<style>
+  .bb-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: -40px -20px 0;
+    padding: 0;
+  }
+  .bb-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/bricsbrother.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bb-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,.55) 0%,
+      rgba(0,0,0,.7) 50%,
+      rgba(0,0,0,.85) 100%
+    );
+  }
+  .bb-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px 24px;
+  }
+  .bb-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,.5);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+  }
+  .bb-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.95);
+    margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(0,0,0,.4);
+  }
+  .bb-lead {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 6px rgba(0,0,0,.3);
+  }
+  @media (max-width: 640px) {
+    .bb-title { font-size: 2.4rem; }
+    .bb-tagline { font-size: 1.1rem; }
+    .bb-lead { font-size: 1rem; }
+  }
+</style>
