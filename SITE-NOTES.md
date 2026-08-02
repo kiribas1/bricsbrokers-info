@@ -7,7 +7,7 @@ Astro vedi `/srv/github-sites/PROJECT-NOTES.md`.
 - Sito: **BRICS Markets & Currencies** (`https://bricsbrokers.info`)
 - Tipo: **Astro**, multilingua (en, es, zh, ru, pt, ar), pre-prefisso lingua (`prefixDefaultLocale: true`)
 - Repo: `git@github.com:kiribas1/bricsbrokers-info.git` (branch `main`, path minuscolo)
-- Deploy: Netlify (build `npm run build`, publish `dist/`, root → `/en/` 302)
+- Deploy: **Cloudflare Pages** (collegato al repo GitHub; build `npm run build`, publish `dist/`, root → `/en/` 302)
 
 ## Stack
 - Node >= 22.12, npm, Astro 7, `@astrojs/sitemap`.
@@ -48,11 +48,13 @@ La rigenerazione automatica è in `scripts/`. SBAGA:
 Rischio noto: senza lingua esplicita nel prompt il modello può uscire in olandese;
 se una pagina esce nella lingua sbagliata, rigenera quella lingua con `gen-lang.mjs`.
 
-## Deploy
+## Deploy (Cloudflare Pages)
 ```bash
 git add -A && git commit -m "msg" && git push origin main
 ```
-Netlify ri-deploys automaticamente. Verifica poi l'URL live e `sitemap-0.xml`.
+Cloudflare Pages ri-deploya automaticamente dal push su GitHub (pubblica la cartella `dist/`
+generata da `npm run build`). La root è rediretta a `/en/` 302. Verifica poi l'URL live e
+`sitemap-0.xml`.
 
 ## Convenzioni / fatti
 - La frase per fanshap "Il 90% dei ricavi resta a te…" vive in `/srv/fanshap.com/PROJECT_STATUS.md`
