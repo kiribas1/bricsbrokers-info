@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { article as enArticle } from '../../data/creator-news.en';
+
+const packs: Record<string, any> = {
+  en: enArticle,
+  es: (await import('../../data/creator-news.es')).article,
+  zh: (await import('../../data/creator-news.zh')).article,
+  ru: (await import('../../data/creator-news.ru')).article,
+  pt: (await import('../../data/creator-news.pt')).article,
+  ar: (await import('../../data/creator-news.ar')).article,
+};
+
+export async function getStaticPaths() {
+  const locales = ['en', 'es', 'zh', 'ru', 'pt', 'ar'];
+  return locales.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+const article = packs[lang] || enArticle;
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || '';
+const canonical = `${siteUrl}/creator-economy/${lang}/`;
+
+// Wrap the proper nouns fanshap and radaruni in contextual outbound links.
+// The nouns survive every translation (they are kept as brand names), so the
+// links work across all six locales.
+function renderLinks(text: string): string {
+  return text
+    .replace(/\bfanshap\b/gi, '<a href="https://fanshap.com" rel="nofollow sponsored">fanshap</a>')
+    .replace(/\bradaruni\b/gi, '<a href="https://radaruni.com" rel="nofollow sponsored">RadarUni</a>')
+    .replace(/\bradar\b/gi, '<a href="https://radaruni.com" rel="nofollow sponsored">radar</a>');
+}
+---
+<BaseLayout
+  title={`${article.title} | BRICS Markets`}
+  description={article.description}
+  lang={lang}
+  type="article"
+  publishedDate={article.publishedDate}
+  modifiedDate={article.modifiedDate}
+  section={article.kicker}
+  canonicalUrl={canonical}
+>
+  <Fragment slot="logo">BRICS Markets</Fragment>
+  <Fragment slot="footer-name">BRICS Markets &amp; Currencies</Fragment>
+
+  <article class="guide">
+    <header class="guide-head">
+      <p class="guide-kicker">{article.kicker}</p>
+      <h1 class="guide-h1">{article.title}</h1>
+      <p class="guide-lead">{article.description}</p>
+      <p class="guide-meta">📅 {article.modifiedDate}</p>
+    </header>
+
+    {article.lead.map((p) => <p class="guide-p" set:html={renderLinks(p)} />)}
+    {article.paragraphs.map((p) => <p class="guide-p" set:html={renderLinks(p)} />)}
+
+    <div class="ad-slot">Ad Space</div>
+
+    <section class="guide-facts">
+      <h2>Key takeaways</h2>
+      <ul>
+        {article.takeaways?.map((b) => <li><strong>{b.label}:</strong> {b.text}</li>)}
+      </ul>
+    </section>
+
+    <section class="guide-faq">
+      <h2>FAQ</h2>
+      {article.faq?.map((f) => (
+        <div class="faq-item">
+          <h3 class="faq-q">{f.q}</h3>
+          <p class="faq-a">{f.a}</p>
+        </div>
+      ))}
+    </section>
+
+    <a class="back-home" href={`/${lang}/`}>← Back to home</a>
+  </article>
+</BaseLayout>
+
+<style>
+  .guide { max-width: 780px; margin: 0 auto; }
+  .guide-head { margin-bottom: 24px; }
+  .guide-kicker {
+    color: #f59e0b; font-weight: 700; font-size: .8rem;
+    text-transform: uppercase; letter-spacing: .12em; margin-bottom: 6px;
+  }
+  .guide-h1 { color: #fff; font-size: 1.9rem; line-height: 1.15; margin-bottom: 12px; }
+  .guide-lead { color: rgba(255,255,255,.7); font-size: 1.1rem; line-height: 1.6; margin-bottom: 8px; }
+  .guide-meta { color: rgba(255,255,255,.4); font-size: .8rem; }
+  .guide-p { color: #d0d0d0; margin: 18px 0; font-size: 1.02rem; line-height: 1.7; }
+  .guide-facts, .guide-faq {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px; padding: 20px; margin: 26px 0;
+  }
+  .guide-facts h2, .guide-faq h2 { color: #fff; font-size: 1.2rem; margin-bottom: 12px; }
+  .guide-facts ul { list-style: none; padding: 0; }
+  .guide-facts li { padding: 6px 0; color: #d0d0d0; }
+  .faq-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .faq-item:last-child { border-bottom: 0; }
+  .faq-q { color: #fff; font-size: 1rem; margin-bottom: 4px; }
+  .faq-a { color: #d0d0d0; margin: 0; }
+  .back-home { display: inline-block; margin-top: 20px; color: #6ba3d6; }
+</style>
