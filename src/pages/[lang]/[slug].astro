@@ -1,0 +1,37 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import type { GuideMeta, LangLabels } from '../../layouts/GuideLayout.astro';
+import { guides as enGuides, labels as enLabels } from '../../data/guides.en';
+import { guides as esGuides, labels as esLabels } from '../../data/guides.es';
+import { guides as zhGuides, labels as zhLabels } from '../../data/guides.zh';
+import { guides as ruGuides, labels as ruLabels } from '../../data/guides.ru';
+import { guides as ptGuides, labels as ptLabels } from '../../data/guides.pt';
+import { guides as arGuides, labels as arLabels } from '../../data/guides.ar';
+
+export async function getStaticPaths() {
+  const LANG_PACKS: Record<string, { guides: GuideMeta[]; labels: LangLabels }> = {
+    en: { guides: enGuides, labels: enLabels },
+    es: { guides: esGuides, labels: esLabels },
+    zh: { guides: zhGuides, labels: zhLabels },
+    ru: { guides: ruGuides, labels: ruLabels },
+    pt: { guides: ptGuides, labels: ptLabels },
+    ar: { guides: arGuides, labels: arLabels },
+  };
+  const locales = ['en', 'es', 'zh', 'ru', 'pt', 'ar'];
+  const paths: Array<{ params: { lang: string; slug: string }; props: { guide: GuideMeta; lang: string; allGuides: GuideMeta[]; labels: LangLabels } }> = [];
+  for (const lang of locales) {
+    const pack = LANG_PACKS[lang] || LANG_PACKS.en;
+    for (const guide of pack.guides) {
+      paths.push({
+        params: { lang, slug: guide.slug },
+        props: { guide, lang, allGuides: pack.guides, labels: pack.labels },
+      });
+    }
+  }
+  return paths;
+}
+
+const { guide, lang, allGuides, labels } = Astro.props;
+---
+
+<GuideLayout lang={lang} guide={guide} allGuides={allGuides} labels={labels} />

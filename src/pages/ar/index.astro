@@ -25,33 +25,52 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
   <div class="ad-slot">مساحة إعلانية - Google AdSense</div>
 
   <div class="card-grid">
-    <article class="card">
+    <article class="card"><a href="/ar/bse-and-nse-india/">
       <h2>بورصات بريكس</h2>
       <p>تغطية شاملة لبورصتي BSE وNSE في الهند، وبورصتي شنغهاي وشنتشن في الصين، وB3 في البرازيل، وMOEX في روسيا، وJSE في جنوب أفريقيا. مؤشرات حية وأحجام تداول وتحليل القيمة السوقية.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ar/indian-rupee/">
       <h2>أسعار صرف العملات</h2>
       <p>تتبع فوري لأسعار اليوان والروبية والريال والروبل والراند والجنيه المصري والدرهم الإماراتي. تحليل أزواج العملات المتقاطعة والاتجاهات التاريخية وتأثير سياسات البنوك المركزية.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ar/invest-in-brics/">
       <h2>الشركات الأسرع نمواً</h2>
       <p>اكتشف الشركات العامة الأسرع نمواً في دول بريكس. تحليل قطاعي يغطي التكنولوجيا والطاقة والمالية والتصنيع — القادة الذين يدفعون نمو الأسواق الناشئة.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ar/brics-currency/">
       <h2>مؤشر عملات بريكس</h2>
       <p>تتبع العملة المشتركة المقترحة لبريكس وتقدم التخلي عن الدولار. تحليل اتفاقيات مبادلة العملات الثنائية والتحول بعيداً عن التجارة المقومة بالدولار الأمريكي.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ar/brics-summit/">
       <h2>السلع والموارد</h2>
       <p>النفط والذهب والمعادن النادرة والزراعة — كيف تهيمن دول بريكس على أسواق السلع العالمية. تتبع الأسعار وتحليل سلاسل التوريد وفرص الاستثمار المدفوعة بالموارد.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ar/invest-in-brics/">
       <h2>فرص الاستثمار</h2>
       <p>صناديق المؤشرات المتداولة وشهادات الإيداع الأمريكية ومسارات الاستثمار المباشر في أسواق بريكس للمستثمرين الدوليين. أدلة تنظيمية وتقييم المخاطر واستراتيجيات المحافظ.</p>
-    </article>
+    </a></article>
   </div>
 
   <div class="ad-slot">مساحة إعلانية - Google AdSense</div>
+
+  <section class="guide-index">
+    <h2>الأدلة والتفسيرات</h2>
+    <ul>
+      <li><a href="/ar/bse-and-nse-india/">BSE &amp; NSE (India)</a></li>
+      <li><a href="/ar/shanghai-and-shenzhen-china/">Shanghai &amp; Shenzhen (China)</a></li>
+      <li><a href="/ar/b3-brazil/">B3 (Brazil)</a></li>
+      <li><a href="/ar/moex-russia-index/">MOEX (Russia)</a></li>
+      <li><a href="/ar/jse-south-africa/">JSE (South Africa)</a></li>
+      <li><a href="/ar/renminbi-cny/">Renminbi</a></li>
+      <li><a href="/ar/brazilian-real/">Brazilian real</a></li>
+      <li><a href="/ar/indian-rupee/">Indian rupee</a></li>
+      <li><a href="/ar/south-african-rand/">South African rand</a></li>
+      <li><a href="/ar/russian-ruble/">Russian ruble</a></li>
+      <li><a href="/ar/brics-currency/">Is there a BRICS currency?</a></li>
+      <li><a href="/ar/invest-in-brics/">How to invest</a></li>
+      <li><a href="/ar/brics-summit/">BRICS &amp; the summit</a></li>
+    </ul>
+  </section>
 
   <BricsGame lang="ar" />
 
@@ -127,4 +146,21 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
     .bb-tagline { font-size: 1.1rem; }
     .bb-lead { font-size: 1rem; }
   }
+
+  .card a { color: inherit; text-decoration: none; display: block; }
+  .card a:hover { text-decoration: none; }
+  .card a h2 { color: #fff; }
+  .guide-index {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px; padding: 24px; margin: 32px 0;
+  }
+  .guide-index h2 { color: #fff; font-size: 1.3rem; margin-bottom: 16px; }
+  .guide-index ul {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px 24px; list-style: none; padding: 0; margin: 0;
+  }
+  .guide-index li { padding: 3px 0; }
+  .guide-index a { color: #6ba3d6; }
+  .guide-index a:hover { text-decoration: underline; }
+
 </style>

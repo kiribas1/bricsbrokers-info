@@ -26,30 +26,49 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
 
   <div class="card-grid">
     <article class="card">
-      <h2>BRICS Stock Exchanges</h2>
-      <p>Comprehensive coverage of BSE and NSE in India, Shanghai and Shenzhen exchanges in China, B3 in Brazil, MOEX in Russia, and the JSE in South Africa. Live indices, trading volumes, and market cap analysis.</p>
+      <a href="/en/bse-and-nse-india/"><h2>BRICS Stock Exchanges</h2>
+      <p>Comprehensive coverage of BSE and NSE in India, Shanghai and Shenzhen exchanges in China, B3 in Brazil, MOEX in Russia, and the JSE in South Africa. Live indices, trading volumes, and market cap analysis.</p></a>
     </article>
     <article class="card">
-      <h2>Currency Exchange Rates</h2>
-      <p>Real-time forex tracking for CNY, INR, BRL, RUB, ZAR, EGP, and AED. Cross-currency pair analysis, historical trends, and central bank policy impact on BRICS exchange rates.</p>
+      <a href="/en/indian-rupee/"><h2>Currency Exchange Rates</h2>
+      <p>Real-time forex tracking for CNY, INR, BRL, RUB, ZAR, EGP, and AED. Cross-currency pair analysis, historical trends, and central bank policy impact on BRICS exchange rates.</p></a>
     </article>
     <article class="card">
-      <h2>Top Growing Companies</h2>
-      <p>Discover the fastest-growing public companies across BRICS nations. Sector-by-sector analysis covering tech, energy, finance, and manufacturing leaders driving emerging market growth.</p>
+      <a href="/en/invest-in-brics/"><h2>Top Growing Companies</h2>
+      <p>Discover the fastest-growing public companies across BRICS nations. Sector-by-sector analysis covering tech, energy, finance, and manufacturing leaders driving emerging market growth.</p></a>
     </article>
     <article class="card">
-      <h2>BRICS Currency Index</h2>
-      <p>Tracking the proposed BRICS common currency and de-dollarization progress. Analysis of bilateral currency swap agreements and the shift away from USD-denominated trade.</p>
+      <a href="/en/brics-currency/"><h2>BRICS Currency Index</h2>
+      <p>Tracking the proposed BRICS common currency and de-dollarization progress. Analysis of bilateral currency swap agreements and the shift away from USD-denominated trade.</p></a>
     </article>
     <article class="card">
-      <h2>Commodities & Resources</h2>
-      <p>Oil, gold, rare earths, and agriculture — how BRICS nations dominate global commodity markets. Price tracking, supply chain analysis, and resource-driven investment opportunities.</p>
+      <a href="/en/brics-summit/"><h2>Commodities & Resources</h2>
+      <p>Oil, gold, rare earths, and agriculture — how BRICS nations dominate global commodity markets. Price tracking, supply chain analysis, and resource-driven investment opportunities.</p></a>
     </article>
     <article class="card">
-      <h2>Investment Opportunities</h2>
-      <p>ETFs, ADRs, and direct investment routes into BRICS markets for international investors. Regulatory guides, risk assessment, and portfolio strategies for emerging market exposure.</p>
+      <a href="/en/invest-in-brics/"><h2>Investment Opportunities</h2>
+      <p>ETFs, ADRs, and direct investment routes into BRICS markets for international investors. Regulatory guides, risk assessment, and portfolio strategies.</p></a>
     </article>
   </div>
+
+  <section class="guide-index">
+    <h2>Guides &amp; explained</h2>
+    <ul>
+      <li><a href="/en/bse-and-nse-india/">BSE &amp; NSE — India’s two exchanges</a></li>
+      <li><a href="/en/shanghai-and-shenzhen-china/">Shanghai &amp; Shenzhen — China</a></li>
+      <li><a href="/en/b3-brazil/">B3 — Brazil</a></li>
+      <li><a href="/en/moex-russia-index/">MOEX — Russia</a></li>
+      <li><a href="/en/jse-south-africa/">JSE — South Africa</a></li>
+      <li><a href="/en/renminbi-cny/">The renminbi explained</a></li>
+      <li><a href="/en/brazilian-real/">The Brazilian real</a></li>
+      <li><a href="/en/indian-rupee/">The Indian rupee</a></li>
+      <li><a href="/en/south-african-rand/">The rand</a></li>
+      <li><a href="/en/russian-ruble/">The ruble</a></li>
+      <li><a href="/en/brics-currency/">Is there a BRICS currency?</a></li>
+      <li><a href="/en/invest-in-brics/">How to invest in BRICS</a></li>
+      <li><a href="/en/brics-summit/">BRICS growth &amp; summit</a></li>
+    </ul>
+  </section>
 
   <div class="ad-slot">Ad Space - Google AdSense</div>
 
@@ -127,4 +146,22 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
     .bb-tagline { font-size: 1.1rem; }
     .bb-lead { font-size: 1rem; }
   }
+  .card a { color: inherit; text-decoration: none; display: block; }
+  .card a:hover { text-decoration: none; }
+  .card a h2 { color: #fff; }
+  .content-index {
+    max-width: 1140px; margin: 0 auto; padding: 40px 0;
+  }
+  .guide-index {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px; padding: 24px; margin: 32px 0;
+  }
+  .guide-index h2 { color: #fff; font-size: 1.3rem; margin-bottom: 16px; }
+  .guide-index ul {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px 24px; list-style: none; padding: 0; margin: 0;
+  }
+  .guide-index li { padding: 3px 0; }
+  .guide-index a { color: #6ba3d6; }
+  .guide-index a:hover { text-decoration: underline; }
 </style>

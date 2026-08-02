@@ -25,33 +25,52 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
   <div class="ad-slot">Рекламное место - Google AdSense</div>
 
   <div class="card-grid">
-    <article class="card">
+    <article class="card"><a href="/ru/bse-and-nse-india/">
       <h2>Фондовые биржи БРИКС</h2>
       <p>Полный обзор BSE и NSE в Индии, Шанхайской и Шэньчжэньской бирж в Китае, B3 в Бразилии, MOEX в России и JSE в ЮАР. Котировки индексов, объёмы торгов и анализ капитализации.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ru/indian-rupee/">
       <h2>Курсы обмена валют</h2>
       <p>Отслеживание валютных курсов CNY, INR, BRL, RUB, ZAR, EGP и AED в реальном времени. Анализ кросс-курсов, исторические тренды и влияние политики центробанков на курсы БРИКС.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ru/invest-in-brics/">
       <h2>Самые быстрорастущие компании</h2>
       <p>Откройте для себя наиболее динамично развивающиеся публичные компании стран БРИКС. Секторальный анализ технологий, энергетики, финансов и производства — лидеров роста развивающихся рынков.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ru/brics-currency/">
       <h2>Валютный индекс БРИКС</h2>
       <p>Отслеживание предлагаемой единой валюты БРИКС и хода дедолларизации. Анализ двусторонних валютных своп-соглашений и отхода от торговли в долларах США.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ru/brics-summit/">
       <h2>Сырьё и ресурсы</h2>
       <p>Нефть, золото, редкоземельные металлы и сельхозпродукция — как страны БРИКС доминируют на мировых сырьевых рынках. Динамика цен, анализ цепочек поставок и ресурсные инвестиционные возможности.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/ru/invest-in-brics/">
       <h2>Инвестиционные возможности</h2>
       <p>ETF, ADR и пути прямого инвестирования в рынки БРИКС для международных инвесторов. Регуляторные руководства, оценка рисков и портфельные стратегии для экспозиции к развивающимся рынкам.</p>
-    </article>
+    </a></article>
   </div>
 
   <div class="ad-slot">Рекламное место - Google AdSense</div>
+
+  <section class="guide-index">
+    <h2>Гиды и объяснения</h2>
+    <ul>
+      <li><a href="/ru/bse-and-nse-india/">BSE &amp; NSE (India)</a></li>
+      <li><a href="/ru/shanghai-and-shenzhen-china/">Shanghai &amp; Shenzhen (China)</a></li>
+      <li><a href="/ru/b3-brazil/">B3 (Brazil)</a></li>
+      <li><a href="/ru/moex-russia-index/">MOEX (Russia)</a></li>
+      <li><a href="/ru/jse-south-africa/">JSE (South Africa)</a></li>
+      <li><a href="/ru/renminbi-cny/">Renminbi</a></li>
+      <li><a href="/ru/brazilian-real/">Brazilian real</a></li>
+      <li><a href="/ru/indian-rupee/">Indian rupee</a></li>
+      <li><a href="/ru/south-african-rand/">South African rand</a></li>
+      <li><a href="/ru/russian-ruble/">Russian ruble</a></li>
+      <li><a href="/ru/brics-currency/">Is there a BRICS currency?</a></li>
+      <li><a href="/ru/invest-in-brics/">How to invest</a></li>
+      <li><a href="/ru/brics-summit/">BRICS &amp; the summit</a></li>
+    </ul>
+  </section>
 
   <BricsGame lang="ru" />
 
@@ -127,4 +146,21 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
     .bb-tagline { font-size: 1.1rem; }
     .bb-lead { font-size: 1rem; }
   }
+
+  .card a { color: inherit; text-decoration: none; display: block; }
+  .card a:hover { text-decoration: none; }
+  .card a h2 { color: #fff; }
+  .guide-index {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px; padding: 24px; margin: 32px 0;
+  }
+  .guide-index h2 { color: #fff; font-size: 1.3rem; margin-bottom: 16px; }
+  .guide-index ul {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px 24px; list-style: none; padding: 0; margin: 0;
+  }
+  .guide-index li { padding: 3px 0; }
+  .guide-index a { color: #6ba3d6; }
+  .guide-index a:hover { text-decoration: underline; }
+
 </style>

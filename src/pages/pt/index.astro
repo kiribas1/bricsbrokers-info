@@ -25,33 +25,52 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
   <div class="ad-slot">Espaço Publicitário - Google AdSense</div>
 
   <div class="card-grid">
-    <article class="card">
+    <article class="card"><a href="/pt/bse-and-nse-india/">
       <h2>Bolsas de Valores BRICS</h2>
       <p>Cobertura abrangente da BSE e NSE na Índia, bolsas de Xangai e Shenzhen na China, B3 no Brasil, MOEX na Rússia e JSE na África do Sul. Índices ao vivo, volumes de negociação e análise de capitalização.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/pt/indian-rupee/">
       <h2>Taxas de Câmbio</h2>
       <p>Acompanhamento forex em tempo real para CNY, INR, BRL, RUB, ZAR, EGP e AED. Análise de pares cruzados, tendências históricas e impacto das políticas dos bancos centrais nas taxas BRICS.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/pt/invest-in-brics/">
       <h2>Empresas de Maior Crescimento</h2>
       <p>Descubra as empresas públicas de crescimento mais rápido nos países BRICS. Análise setor por setor cobrindo tecnologia, energia, finanças e manufatura que impulsionam o crescimento emergente.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/pt/brics-currency/">
       <h2>Índice de Moedas BRICS</h2>
       <p>Acompanhamento da proposta de moeda comum BRICS e progresso da desdolarização. Análise de acordos bilaterais de swap cambial e a mudança do comércio denominado em USD.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/pt/brics-summit/">
       <h2>Commodities e Recursos</h2>
       <p>Petróleo, ouro, terras raras e agricultura — como as nações BRICS dominam os mercados globais de commodities. Acompanhamento de preços, análise de cadeias de suprimentos e oportunidades de investimento.</p>
-    </article>
-    <article class="card">
+    </a></article>
+    <article class="card"><a href="/pt/invest-in-brics/">
       <h2>Oportunidades de Investimento</h2>
       <p>ETFs, ADRs e rotas de investimento direto nos mercados BRICS para investidores internacionais. Guias regulatórios, avaliação de riscos e estratégias de portfólio para exposição a mercados emergentes.</p>
-    </article>
+    </a></article>
   </div>
 
   <div class="ad-slot">Espaço Publicitário - Google AdSense</div>
+
+  <section class="guide-index">
+    <h2>Guias e explicações</h2>
+    <ul>
+      <li><a href="/pt/bse-and-nse-india/">BSE &amp; NSE (India)</a></li>
+      <li><a href="/pt/shanghai-and-shenzhen-china/">Shanghai &amp; Shenzhen (China)</a></li>
+      <li><a href="/pt/b3-brazil/">B3 (Brazil)</a></li>
+      <li><a href="/pt/moex-russia-index/">MOEX (Russia)</a></li>
+      <li><a href="/pt/jse-south-africa/">JSE (South Africa)</a></li>
+      <li><a href="/pt/renminbi-cny/">Renminbi</a></li>
+      <li><a href="/pt/brazilian-real/">Brazilian real</a></li>
+      <li><a href="/pt/indian-rupee/">Indian rupee</a></li>
+      <li><a href="/pt/south-african-rand/">South African rand</a></li>
+      <li><a href="/pt/russian-ruble/">Russian ruble</a></li>
+      <li><a href="/pt/brics-currency/">Is there a BRICS currency?</a></li>
+      <li><a href="/pt/invest-in-brics/">How to invest</a></li>
+      <li><a href="/pt/brics-summit/">BRICS &amp; the summit</a></li>
+    </ul>
+  </section>
 
   <BricsGame lang="pt" />
 
@@ -127,4 +146,21 @@ import WeeklyNews from '../../components/WeeklyNews.astro';
     .bb-tagline { font-size: 1.1rem; }
     .bb-lead { font-size: 1rem; }
   }
+
+  .card a { color: inherit; text-decoration: none; display: block; }
+  .card a:hover { text-decoration: none; }
+  .card a h2 { color: #fff; }
+  .guide-index {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px; padding: 24px; margin: 32px 0;
+  }
+  .guide-index h2 { color: #fff; font-size: 1.3rem; margin-bottom: 16px; }
+  .guide-index ul {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px 24px; list-style: none; padding: 0; margin: 0;
+  }
+  .guide-index li { padding: 3px 0; }
+  .guide-index a { color: #6ba3d6; }
+  .guide-index a:hover { text-decoration: underline; }
+
 </style>
